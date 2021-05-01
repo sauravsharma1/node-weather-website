@@ -6,6 +6,7 @@ const forecast=require('./utils/forecast')
 const publicDirectoryPath=path.join(__dirname,'../public')
 
 const app=express()
+const port=process.env.PORT || 3000
 
 app.use(express.static(publicDirectoryPath))
 
@@ -107,6 +108,6 @@ app.get('*',(req,res)=>{
 res.send('My 404 page')
 })
 
-app.listen(3000,()=>{
-    console.log('server is up on port 3000!')
+app.listen(port,()=>{
+    console.log('server is up on port'+port)
 })
